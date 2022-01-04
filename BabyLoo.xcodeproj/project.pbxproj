@@ -11,6 +11,16 @@
 		700246002780530A00DAC226 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700245FF2780530A00DAC226 /* ContentView.swift */; };
 		700246022780530F00DAC226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700246012780530F00DAC226 /* Assets.xcassets */; };
 		700246052780530F00DAC226 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700246042780530F00DAC226 /* Preview Assets.xcassets */; };
+		7002460D278053E400DAC226 /* LooModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7002460B278053E400DAC226 /* LooModel.xcdatamodeld */; };
+		700246102780552D00DAC226 /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7002460F2780552D00DAC226 /* CoreDataProvider.swift */; };
+		7002461227806F1500DAC226 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7002461127806F1500DAC226 /* LaunchScreen.swift */; };
+		7002461527806F9A00DAC226 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7002461427806F9A00DAC226 /* Lottie */; };
+		70024617278071E000DAC226 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70024616278071E000DAC226 /* LottieView.swift */; };
+		70024619278075FF00DAC226 /* baby.json in Resources */ = {isa = PBXBuildFile; fileRef = 70024618278075FF00DAC226 /* baby.json */; };
+		7002461C2780D52600DAC226 /* LooEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7002461B2780D52600DAC226 /* LooEntry.swift */; };
+		705D9C9A2783FECA002EAB03 /* LooListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705D9C992783FECA002EAB03 /* LooListViewModel.swift */; };
+		70A052052782B22800B6585D /* ExtensionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A052042782B22800B6585D /* ExtensionHelper.swift */; };
+		70A0520727831EC400B6585D /* LooDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A0520627831EC400B6585D /* LooDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +29,16 @@
 		700245FF2780530A00DAC226 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		700246012780530F00DAC226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		700246042780530F00DAC226 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7002460C278053E400DAC226 /* LooModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LooModel.xcdatamodel; sourceTree = "<group>"; };
+		7002460F2780552D00DAC226 /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
+		7002461127806F1500DAC226 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		70024616278071E000DAC226 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		70024618278075FF00DAC226 /* baby.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = baby.json; sourceTree = "<group>"; };
+		7002461A278078B700DAC226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7002461B2780D52600DAC226 /* LooEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooEntry.swift; sourceTree = "<group>"; };
+		705D9C992783FECA002EAB03 /* LooListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooListViewModel.swift; sourceTree = "<group>"; };
+		70A052042782B22800B6585D /* ExtensionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionHelper.swift; sourceTree = "<group>"; };
+		70A0520627831EC400B6585D /* LooDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7002461527806F9A00DAC226 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +72,20 @@
 		700245FC2780530A00DAC226 /* BabyLoo */ = {
 			isa = PBXGroup;
 			children = (
+				705D9C982783FEA9002EAB03 /* View Models */,
+				70A052032782B20C00B6585D /* Extensions */,
+				7002461A278078B700DAC226 /* Info.plist */,
+				70024618278075FF00DAC226 /* baby.json */,
+				7002460E2780551600DAC226 /* Provider */,
 				700245FD2780530A00DAC226 /* BabyLooApp.swift */,
 				700245FF2780530A00DAC226 /* ContentView.swift */,
 				700246012780530F00DAC226 /* Assets.xcassets */,
 				700246032780530F00DAC226 /* Preview Content */,
+				7002460B278053E400DAC226 /* LooModel.xcdatamodeld */,
+				7002461127806F1500DAC226 /* LaunchScreen.swift */,
+				70024616278071E000DAC226 /* LottieView.swift */,
+				7002461B2780D52600DAC226 /* LooEntry.swift */,
+				70A0520627831EC400B6585D /* LooDetail.swift */,
 			);
 			path = BabyLoo;
 			sourceTree = "<group>";
@@ -65,6 +96,30 @@
 				700246042780530F00DAC226 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7002460E2780551600DAC226 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				7002460F2780552D00DAC226 /* CoreDataProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		705D9C982783FEA9002EAB03 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				705D9C992783FECA002EAB03 /* LooListViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		70A052032782B20C00B6585D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				70A052042782B22800B6585D /* ExtensionHelper.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +138,9 @@
 			dependencies = (
 			);
 			name = BabyLoo;
+			packageProductDependencies = (
+				7002461427806F9A00DAC226 /* Lottie */,
+			);
 			productName = BabyLoo;
 			productReference = 700245FA2780530A00DAC226 /* BabyLoo.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +169,9 @@
 				Base,
 			);
 			mainGroup = 700245F12780530A00DAC226;
+			packageReferences = (
+				7002461327806F9A00DAC226 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 700245FB2780530A00DAC226 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70024619278075FF00DAC226 /* baby.json in Resources */,
 				700246052780530F00DAC226 /* Preview Assets.xcassets in Resources */,
 				700246022780530F00DAC226 /* Assets.xcassets in Resources */,
 			);
@@ -137,8 +199,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7002460D278053E400DAC226 /* LooModel.xcdatamodeld in Sources */,
 				700246002780530A00DAC226 /* ContentView.swift in Sources */,
+				70A052052782B22800B6585D /* ExtensionHelper.swift in Sources */,
+				7002461227806F1500DAC226 /* LaunchScreen.swift in Sources */,
+				7002461C2780D52600DAC226 /* LooEntry.swift in Sources */,
+				70A0520727831EC400B6585D /* LooDetail.swift in Sources */,
 				700245FE2780530A00DAC226 /* BabyLooApp.swift in Sources */,
+				705D9C9A2783FECA002EAB03 /* LooListViewModel.swift in Sources */,
+				700246102780552D00DAC226 /* CoreDataProvider.swift in Sources */,
+				70024617278071E000DAC226 /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,13 +338,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"BabyLoo/Preview Content\"";
 				DEVELOPMENT_TEAM = G6KL98HCPY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BabyLoo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -297,13 +368,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"BabyLoo/Preview Content\"";
 				DEVELOPMENT_TEAM = G6KL98HCPY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BabyLoo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -341,6 +413,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7002461327806F9A00DAC226 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7002461427806F9A00DAC226 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7002461327806F9A00DAC226 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		7002460B278053E400DAC226 /* LooModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7002460C278053E400DAC226 /* LooModel.xcdatamodel */,
+			);
+			currentVersion = 7002460C278053E400DAC226 /* LooModel.xcdatamodel */;
+			path = LooModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 700245F22780530A00DAC226 /* Project object */;
 }

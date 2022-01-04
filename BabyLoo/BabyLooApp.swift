@@ -11,7 +11,7 @@ import SwiftUI
 struct BabyLooApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(\.colorScheme, .light)
         }
     }
 }

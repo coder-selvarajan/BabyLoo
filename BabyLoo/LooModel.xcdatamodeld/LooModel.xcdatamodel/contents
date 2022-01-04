@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Loo" representedClassName="Loo" syncable="YES" codeGenerationType="class">
+        <attribute name="pee" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="poo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <elements>
+        <element name="Loo" positionX="-63" positionY="-18" width="128" height="14"/>
+    </elements>
+</model>
