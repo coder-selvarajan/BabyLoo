@@ -46,4 +46,10 @@ extension Date {
         dateFormatter.setLocalizedDateFormatFromTemplate("h:mm a")
         return dateFormatter.string(from: self)
     }
+    
+    func displayDateTime() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMM d - h:mm a")
+        return dateFormatter.string(from: self)
+    }
 }

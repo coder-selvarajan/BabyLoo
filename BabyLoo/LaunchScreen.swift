@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LaunchScreen: View {
     @State private var isActive = false
-    let login = ContentView()
+    let login = HomeView()
     
     var body: some View {
         NavigationView {

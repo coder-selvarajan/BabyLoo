@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct LooDetail: View {
-    let loo: Loo
-    @State var timestamp : Date = Date()
-    @State var poo : Bool = true
-    @State var pee : Bool = false
-    @State private var activityType = 0
-    @Binding var needsRefresh : Bool
+    @Binding var looVM: LooViewModel
+    @ObservedObject var looListVM : LooListViewModel
     
+    @State var looTimestamp : Date = Date()
+    @State private var activityType = 1
     let coreDM = CoreDataProvider.shared
     
     let yellow: Color = Color(hex: "EDC126")
+//    let yellow: Color = Color(.white)
     
     var body: some View {
         ZStack{
@@ -34,16 +33,14 @@ struct LooDetail: View {
                         }.pickerStyle(SegmentedPickerStyle()).padding(10.0)
                     }
                     Divider()
-                    DatePicker("When ", selection: $timestamp, displayedComponents: [.date, .hourAndMinute])
+                    DatePicker("When ", selection: $looTimestamp, displayedComponents: [.date, .hourAndMinute])
                         .padding(.horizontal)
                     Divider()
                     Button(action: {
-                        loo.timestamp = timestamp
-                        loo.poo = activityType == 0
-                        loo.pee = activityType == 1
-                        
-                        coreDM.updateLoo(loo: loo)
-                        needsRefresh.toggle()
+                        looListVM.updateLoo(id: looVM.id,
+                                            looTimestamp: looTimestamp,
+                                            poo: activityType == 0,
+                                            pee: activityType == 1)
                     }) {
                         Text("Update")
                             .padding(.horizontal, 15)
@@ -65,8 +62,8 @@ struct LooDetail: View {
         .background(yellow)
         .onAppear {
             // initializing from db value
-            timestamp = loo.timestamp ?? Date()
-            activityType = loo.poo ? 0 : 1
+            looTimestamp = looVM.timestamp
+            activityType = looVM.poo ? 0 : 1
         }
         .navigationTitle("Activity Info")
         .navigationBarTitleDisplayMode(.inline)

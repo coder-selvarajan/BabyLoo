@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct LooEntry: View {
-    let coreDM = CoreDataProvider.shared
-    @Binding var peeCount : Int
-    @Binding var pooCount : Int
-    @Binding var needsRefresh : Bool
+    @ObservedObject var looListVM: LooListViewModel
+    
+    @StateObject var addLooVM = AddLooViewModel()
+    @Binding var listDate: Date
+    
+    func refreshEntries() {
+        looListVM.getLooEntriesFor(date: listDate)
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -29,18 +33,20 @@ struct LooEntry: View {
                     .frame(width: 50, height: 50)
                     .padding(.horizontal, 10)
                 VStack(alignment: .leading) {
-                    Text("Pee (\(peeCount))")
+                    Text("Pee")
                         .font(.title2)
                         .bold()
                         .foregroundColor(.black.opacity(0.7))
-                    Text("last at 9.30 am").font(.footnote).foregroundColor(.gray)
+                    Text("last at \(looListVM.lastPee)").font(.footnote).foregroundColor(.gray)
                 }
                 Spacer()
 
                 Button {
-                    peeCount = peeCount + 1
-                    coreDM.saveLoo(poo: false, pee: true)
-                    needsRefresh.toggle()
+                    addLooVM.pee = true
+                    addLooVM.poo = false
+                    addLooVM.timestamp = Date()
+                    addLooVM.save()
+                    refreshEntries()
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
@@ -49,18 +55,6 @@ struct LooEntry: View {
                         .frame(width: 50, height: 50)
                         .padding(.horizontal)
                 }
-
-
-//                Button {
-//                    peeCount -= 1
-//                } label: {
-//                    Image(systemName: "minus.circle.fill")
-//                        .resizable()
-//                        .foregroundColor(.white)
-//                        .background(Circle().opacity(0.4))
-//                        .frame(width: 40, height: 40)
-//                }
-
             }.padding(10).background(.white.opacity(0.35))
 
             HStack{
@@ -69,18 +63,20 @@ struct LooEntry: View {
                     .frame(width: 50, height: 50)
                     .padding(.horizontal, 10)
                 VStack(alignment: .leading) {
-                    Text("Poo (\(pooCount))")
+                    Text("Poo")
                         .font(.title2)
                         .bold()
                         .foregroundColor(.black.opacity(0.7))
-                    Text("last at 8.30 am").font(.footnote).foregroundColor(.gray)
+                    Text("last at \(looListVM.lastPoo)").font(.footnote).foregroundColor(.gray)
                 }
                 Spacer()
 
                 Button {
-                    pooCount = pooCount + 1
-                    coreDM.saveLoo(poo: true, pee: false)
-                    needsRefresh.toggle()
+                    addLooVM.pee = false
+                    addLooVM.poo = true
+                    addLooVM.timestamp = Date()
+                    addLooVM.save()
+                    refreshEntries()
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
@@ -89,17 +85,6 @@ struct LooEntry: View {
                         .frame(width: 50, height: 50)
                         .padding(.horizontal)
                 }
-//                Button {
-//                    pooCount -= 1
-//                } label: {
-//                    Image(systemName: "minus.circle.fill")
-//                        .resizable()
-//                        .foregroundColor(.white)
-//                        .background(Circle().opacity(0.4))
-//                        .frame(width: 40, height: 40)
-//                    //                            .background(Circle().stroke(.black, lineWidth: 2))
-//                }
-
             }.padding(10).background(.white.opacity(0.35))
             //                        Divider()
         }
@@ -107,6 +92,9 @@ struct LooEntry: View {
         .background(.white.opacity(0.25))
         .cornerRadius(15)
         .padding(.vertical, 10)
+        .onAppear {
+            refreshEntries()
+        }
     }
 }
 
